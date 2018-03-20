@@ -1,0 +1,16 @@
+[
+{
+  "modid": "shitmixer",
+  "name": "Shitmixer",
+  "description": "Eat shit",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/TheRealKamisama/Shitmixer",
+  "updateUrl": "https://github.com/TheRealKamisama/Shitmixer",
+  "authorList": ["TheRealKamisama"],
+  "credits": "TRKS, lg, cyl.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
