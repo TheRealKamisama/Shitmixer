@@ -26,15 +26,14 @@ public class ItemLoader
 
     private static void register(Item item, String name)
     {
-        GameRegistry.registerItem(item.setRegistryName("shitmixer",name));
+        GameRegistry.registerItem(item.setRegistryName(name));
+
     }
 
     @SideOnly(Side.CLIENT)
     private static void registerRender(Item item)
     {
         ModelResourceLocation model = new ModelResourceLocation(item.getRegistryName(), "inventory");
-        ModelBakery.registerItemVariants(item, model);
         ModelLoader.setCustomModelResourceLocation(item, 0, model);
-        ModelLoader.setCustomMeshDefinition(item, stack -> model);
     }
 }
