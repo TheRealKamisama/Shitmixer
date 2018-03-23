@@ -1,5 +1,6 @@
 package com.github.therealkamisama.shitmixer.Item;
 
+import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -32,6 +33,8 @@ public class ItemLoader
     private static void registerRender(Item item)
     {
         ModelResourceLocation model = new ModelResourceLocation(item.getRegistryName(), "inventory");
+        ModelBakery.registerItemVariants(item, model);
         ModelLoader.setCustomModelResourceLocation(item, 0, model);
+        ModelLoader.setCustomMeshDefinition(item, stack -> model);
     }
 }
