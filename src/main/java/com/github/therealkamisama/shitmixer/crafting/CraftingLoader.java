@@ -16,10 +16,8 @@ public class CraftingLoader
     }
 
     private static void registerRecipe()
-    {       GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blockShit), new Object[]
-            {
-
-            });
+    {       GameRegistry.addShapedRecipe(new ItemStack(BlockLoader.blockShit),
+                    "SSS", "SSS", "SSS", 'S', ItemLoader.shit);
 
     }
 
