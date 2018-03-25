@@ -11,17 +11,20 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemLoader
 {
+    public static Item shitcookie = new ItemShitCookie();
     public static Item shit = new ItemShit();
 
     public ItemLoader(FMLPreInitializationEvent event)
     {
         register(shit, "shit");
+        register(shitcookie, "shitCookie");
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerRenders()
     {
         registerRender(shit);
+        registerRender(shitcookie);
     }
 
     private static void register(Item item, String name)
