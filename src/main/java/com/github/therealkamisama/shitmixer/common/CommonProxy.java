@@ -14,13 +14,13 @@ public class CommonProxy
     public RegisterLoader registerLoader = new RegisterLoader();
 
     public CommonProxy() {
+        new CreativeTabsLoader();
         new ItemLoader();
         new BlockLoader();
     }
 
     public void preInit(FMLPreInitializationEvent event)
     {
-        new CreativeTabsLoader(event);
     }
 
     public void init(FMLInitializationEvent event)
