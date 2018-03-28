@@ -1,4 +1,4 @@
-package com.github.therealkamisama.shitmixer.Item;
+package com.github.therealkamisama.shitmixer.item;
 
 import net.minecraft.item.ItemFood;
 

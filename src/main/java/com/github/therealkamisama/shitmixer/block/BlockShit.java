@@ -8,7 +8,7 @@ public class BlockShit extends Block
 {
     public BlockShit()
     {
-        super(Material.ground);
+        super(Material.GROUND);
         this.setUnlocalizedName("blockShit");
         this.setHardness(0F);
         this.setCreativeTab(CreativeTabsLoader.tabShitmixer);

@@ -1,9 +1,9 @@
 package com.github.therealkamisama.shitmixer.creativetab;
 
 
-import com.github.therealkamisama.shitmixer.Item.ItemLoader;
+import com.github.therealkamisama.shitmixer.item.ItemLoader;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class CreativeTabsShitmixer extends CreativeTabs
 {
@@ -13,8 +13,8 @@ public class CreativeTabsShitmixer extends CreativeTabs
     }
 
     @Override
-    public Item getTabIconItem()
+    public ItemStack getTabIconItem()
     {
-        return ItemLoader.shit;
+        return new ItemStack(ItemLoader.shit);
     }
 }
