@@ -13,15 +13,15 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 /**
  * @author ustc_zzzz
  */
-@Mod(modid = shitmixer.MODID, name = shitmixer.NAME, version = shitmixer.VERSION, acceptedMinecraftVersions = "1.8.9")
-public class shitmixer
+@Mod(modid = Shitmixer.MODID, name = Shitmixer.NAME, version = Shitmixer.VERSION, acceptedMinecraftVersions = "1.8.9")
+public class Shitmixer
 {
     public static final String MODID = "shitmixer";
     public static final String NAME = "ShitMixer";
     public static final String VERSION = "1.0.0";
 
-    @Instance(shitmixer.MODID)
-    public static shitmixer instance;
+    @Instance(Shitmixer.MODID)
+    public static Shitmixer instance;
 
     @SidedProxy(clientSide = "com.github.therealkamisama.shitmixer.client.ClientProxy", serverSide = "com.github.therealkamisama.shitmixer.common.CommonProxy")
     public static CommonProxy proxy;

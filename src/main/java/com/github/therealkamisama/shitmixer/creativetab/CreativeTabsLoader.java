@@ -9,6 +9,6 @@ public class CreativeTabsLoader
 
     public CreativeTabsLoader(FMLPreInitializationEvent event)
     {
-        tabShitmixer = new CreativeTabsShitmixer ();
+        tabShitmixer = new CreativeTabsShitmixer();
     }
 }

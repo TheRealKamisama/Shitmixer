@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stuff",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "shitmixer:shit"
+    }
+  },
+  "result": {
+    "item": "shitmixer:block_shit"
+  }
+}

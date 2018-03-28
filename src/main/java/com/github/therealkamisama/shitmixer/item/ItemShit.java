@@ -1,4 +1,4 @@
-package com.github.therealkamisama.shitmixer.Item;
+package com.github.therealkamisama.shitmixer.item;
 
 import com.github.therealkamisama.shitmixer.creativetab.CreativeTabsLoader;
 import net.minecraft.item.Item;
