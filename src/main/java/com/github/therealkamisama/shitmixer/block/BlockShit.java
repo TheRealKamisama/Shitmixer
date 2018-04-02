@@ -10,6 +10,7 @@ public class BlockShit extends Block
     {
         super(Material.GROUND);
         this.setUnlocalizedName("blockShit");
+        this.setRegistryName("blockShit");
         this.setHardness(0F);
         this.setCreativeTab(CreativeTabsLoader.tabShitmixer);
     }
