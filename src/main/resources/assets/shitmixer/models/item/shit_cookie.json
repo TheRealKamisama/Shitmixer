@@ -1,7 +1,7 @@
 {
   "parent": "builtin/generated",
   "textures": {
-    "layer0": "shitmixer:items/shitCookie"
+    "layer0": "shitmixer:items/shit_cookie"
   },
   "display": {
     "thirdperson": {
