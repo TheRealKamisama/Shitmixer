@@ -25,7 +25,7 @@ public class shitDropping {
     @SubscribeEvent
     public void shitDropTiming(TickEvent.WorldTickEvent event) {
         shitTiming = shitTiming+1;
-        if (shitTiming == 6000){
+        if (shitTiming == 12000){
             event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity -> {
                 entity.entityDropItem(new ItemStack(shit), 1);
             });
