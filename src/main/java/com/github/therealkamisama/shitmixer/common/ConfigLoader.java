@@ -10,7 +10,7 @@ public class ConfigLoader {
 
     private static Logger logger;
 
-    public static int shitgeneratetime;
+    private static int shitGenerateTime;
 
     public ConfigLoader(FMLPreInitializationEvent event)
     {
@@ -28,7 +28,7 @@ public class ConfigLoader {
 
         comment = "你想让全世界的生物多久喷一次屎，" +
                 "写鸭蛋进去的话六年喷一次。 ";
-        shitgeneratetime = config.get(Configuration.CATEGORY_GENERAL, "shitGenerate", 600, comment).getInt();
+        shitGenerateTime = config.get(Configuration.CATEGORY_GENERAL, "shitGenerate", 600, comment).getInt();
 
         config.save();
         logger.info("Finished loading config. ");
@@ -39,4 +39,7 @@ public class ConfigLoader {
         return logger;
     }
 
+    public static int getShitGenerateTime() {
+        return shitGenerateTime * 20;
+    }
 }
