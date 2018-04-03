@@ -26,7 +26,7 @@ public class ConfigLoader {
         logger.info("Started loading config. ");
         String comment;
 
-        comment = "你想让全世界的生物多久喷一次屎，" +
+        comment = "你想让全世界的生物多少秒随机喷一次屎，" +
                 "写鸭蛋进去的话你思考一下除法运算里除数不能是几？ ";
         shitGenerateTime = config.get(Configuration.CATEGORY_GENERAL, "shitGenerateTime", 600, comment).getInt();
 
