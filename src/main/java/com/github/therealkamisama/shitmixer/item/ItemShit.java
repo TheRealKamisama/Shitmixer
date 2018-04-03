@@ -14,8 +14,6 @@ public class ItemShit extends Item
     public ItemShit()
     {
         super();
-        this.setUnlocalizedName("shit");
-        this.setRegistryName("shit");
         this.setCreativeTab(CreativeTabsLoader.tabShitmixer);
     }
 }

@@ -1,12 +1,10 @@
 package com.github.therealkamisama.shitmixer.common;
 
-import com.github.therealkamisama.shitmixer.Shitmixer;
-import com.github.therealkamisama.shitmixer.block.BlockLoader;
+import com.github.therealkamisama.shitmixer.ShitDroppingHandler;
+import com.github.therealkamisama.shitmixer.common.loader.BlockLoader;
+import com.github.therealkamisama.shitmixer.common.loader.ItemLoader;
 import com.github.therealkamisama.shitmixer.common.register.RegisterLoader;
 import com.github.therealkamisama.shitmixer.crafting.CraftingLoader;
-import com.github.therealkamisama.shitmixer.creativetab.CreativeTabsLoader;
-import com.github.therealkamisama.shitmixer.item.ItemLoader;
-import com.github.therealkamisama.shitmixer.shitDropping;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -16,10 +14,9 @@ public class CommonProxy
     public RegisterLoader registerLoader = new RegisterLoader();
 
     public CommonProxy() {
-        new CreativeTabsLoader();
         new ItemLoader();
         new BlockLoader();
-        new shitDropping();
+        new ShitDroppingHandler();
     }
 
     public void preInit(FMLPreInitializationEvent event)

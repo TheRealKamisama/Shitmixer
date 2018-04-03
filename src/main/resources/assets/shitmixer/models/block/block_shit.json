@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "shitmixer:blocks/blockShit"
+    "all": "shitmixer:blocks/block_shit"
   }
 }

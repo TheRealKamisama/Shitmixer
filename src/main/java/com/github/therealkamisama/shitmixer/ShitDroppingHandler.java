@@ -7,13 +7,13 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
-import static com.github.therealkamisama.shitmixer.item.ItemLoader.shit;
-
-public class shitDropping {
-    int shitTiming = 0;
+import static com.github.therealkamisama.shitmixer.common.SMItems.shit;
 
 
-    public shitDropping() {
+public class ShitDroppingHandler {
+    private int shitTiming = 0;
+
+    public ShitDroppingHandler() {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -24,11 +24,10 @@ public class shitDropping {
 
     @SubscribeEvent
     public void shitDropTiming(TickEvent.WorldTickEvent event) {
-        shitTiming = shitTiming+1;
-        if (shitTiming == 12000){
-            event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity -> {
-                entity.entityDropItem(new ItemStack(shit), 1);
-            });
+        shitTiming++;
+        if (shitTiming == 600 * 20) {
+            event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity ->
+                    entity.entityDropItem(new ItemStack(shit), 1));
             shitTiming = 0;
         }
     }

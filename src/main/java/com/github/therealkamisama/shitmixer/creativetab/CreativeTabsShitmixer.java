@@ -1,7 +1,7 @@
 package com.github.therealkamisama.shitmixer.creativetab;
 
 
-import com.github.therealkamisama.shitmixer.item.ItemLoader;
+import com.github.therealkamisama.shitmixer.common.SMItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -21,6 +21,6 @@ public class CreativeTabsShitmixer extends CreativeTabs
     @SideOnly(Side.CLIENT)
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(ItemLoader.shit);
+        return new ItemStack(SMItems.shit);
     }
 }

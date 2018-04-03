@@ -1,7 +1,7 @@
 item.shit.name=Shit
 
-tile.blockShit.name=BlockShit
+tile.block_shit.name=BlockShit
 
 itemGroup.Shitmixer=Shitmixer
 
-item.shitCookie.name=ShitCookie
+item.shit_cookie.name=ShitCookie

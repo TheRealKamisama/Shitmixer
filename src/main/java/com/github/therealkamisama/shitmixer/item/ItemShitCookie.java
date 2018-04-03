@@ -9,8 +9,6 @@ public class ItemShitCookie extends ItemFood
     {
         super(4, 0.1F, false);
         this.setAlwaysEdible();
-        this.setUnlocalizedName("shitCookie");
-        this.setRegistryName("shitCookie");
         this.setCreativeTab(CreativeTabsLoader.tabShitmixer);
     }
 }
