@@ -11,7 +11,7 @@ public class ConfigLoader {
     private static Logger logger;
 
     private static int shitGenerateTime;
-    private static boolean shitGenerateBoolean;
+    private static boolean generateShit;
     public ConfigLoader(FMLPreInitializationEvent event)
     {
         logger = event.getModLog();
@@ -28,10 +28,10 @@ public class ConfigLoader {
 
         comment = "你想让全世界的生物多久喷一次屎，" +
                 "写鸭蛋进去的话你思考一下除法运算里除数不能是几？ ";
-        shitGenerateTime = config.get(Configuration.CATEGORY_GENERAL, "shitGenerate", 600, comment).getInt();
+        shitGenerateTime = config.get(Configuration.CATEGORY_GENERAL, "shitGenerateTime", 600, comment).getInt();
 
         comment = "写true就会喷屎，写false全世界动物便秘一辈子";
-        shitGenerateBoolean = config.get(Configuration.CATEGORY_GENERAL, "shitGenerateBoolean", true, comment).getBoolean();
+        generateShit = config.get(Configuration.CATEGORY_GENERAL, "generateShit", true, comment).getBoolean();
 
         config.save();
         logger.info("Finished loading config. ");
@@ -46,6 +46,6 @@ public class ConfigLoader {
         return shitGenerateTime * 20;
     }
     public static boolean getshitGenerateBoolean(){
-        return shitGenerateBoolean;
+        return generateShit;
     }
 }
