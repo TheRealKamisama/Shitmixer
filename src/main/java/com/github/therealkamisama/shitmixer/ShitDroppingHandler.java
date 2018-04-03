@@ -12,7 +12,6 @@ import static com.github.therealkamisama.shitmixer.common.SMItems.shit;
 
 
 public class ShitDroppingHandler {
-    private int shitTiming = 0;
 
     public ShitDroppingHandler() {
         MinecraftForge.EVENT_BUS.register(this);
@@ -25,11 +24,10 @@ public class ShitDroppingHandler {
 
     @SubscribeEvent
     public void shitDropTiming(TickEvent.WorldTickEvent event) {
-        shitTiming++;
-        if (shitTiming == ConfigLoader.shitgeneratetime * 20) {
+        final long ticks = event.world.getTotalWorldTime();
+        if (ticks % ConfigLoader.getShitGenerateTime() == 0) {
             event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity ->
                     entity.entityDropItem(new ItemStack(shit), 1));
-            shitTiming = 0;
         }
     }
 }
