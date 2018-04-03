@@ -26,9 +26,11 @@ public class ShitDroppingHandler {
     @SubscribeEvent
     public void shitDropTiming(TickEvent.WorldTickEvent event) {
         final long ticks = event.world.getWorldTime();
-        if (ticks % ConfigLoader.getShitGenerateTime() == 0) {
-            event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity ->
-                    entity.entityDropItem(new ItemStack(shit), 1));
+        if (ConfigLoader.getshitGenerateBoolean()){
+            if (ticks % ConfigLoader.getShitGenerateTime() == 0) {
+                event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity ->
+                        entity.entityDropItem(new ItemStack(shit), 1));
+            }
         }
     }
 }
