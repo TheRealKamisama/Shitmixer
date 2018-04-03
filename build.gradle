@@ -22,8 +22,8 @@ plugins {
 }
 */
 
-version = "1.0.0"
-group = "com.github.ustc_zzzz"
+version = "1.0.1"
+group = "com.github.therealkamisama"
 archivesBaseName = "shitmixer"
 
 minecraft {
@@ -87,7 +87,7 @@ task apiJar(type: Jar) {
     classifier = 'api'
     from sourceSets.main.output
     from sourceSets.main.allSource
-    include 'com/github/ustc_zzzz/shitmixer/api/**'
+    include 'cnm'
 }
 
 artifacts {

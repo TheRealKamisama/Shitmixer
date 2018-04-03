@@ -21,6 +21,7 @@ public class CommonProxy
 
     public void preInit(FMLPreInitializationEvent event)
     {
+        new ConfigLoader(event);
     }
 
     public void init(FMLInitializationEvent event)

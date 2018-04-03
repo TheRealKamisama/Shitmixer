@@ -1,5 +1,6 @@
 package com.github.therealkamisama.shitmixer;
 
+import com.github.therealkamisama.shitmixer.common.ConfigLoader;
 import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,7 +26,7 @@ public class ShitDroppingHandler {
     @SubscribeEvent
     public void shitDropTiming(TickEvent.WorldTickEvent event) {
         shitTiming++;
-        if (shitTiming == 600 * 20) {
+        if (shitTiming == ConfigLoader.shitgeneratetime * 20) {
             event.world.getEntities(EntityAnimal.class, entity -> true).forEach(entity ->
                     entity.entityDropItem(new ItemStack(shit), 1));
             shitTiming = 0;
