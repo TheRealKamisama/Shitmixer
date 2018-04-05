@@ -5,3 +5,5 @@ tile.block_shit.name=BlockShit
 itemGroup.Shitmixer=Shitmixer
 
 item.shit_cookie.name=ShitCookie
+
+tile.shit_centrifuge.name=ShitCentrifuge
