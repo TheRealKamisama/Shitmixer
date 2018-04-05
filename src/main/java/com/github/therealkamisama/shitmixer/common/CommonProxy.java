@@ -50,22 +50,17 @@ public class CommonProxy
 
             Type type = Type.getObjectType(entry.getAnnotationInfo().get("value").toString());
 
-            if (type == null)
-            {
-                FMLLog.log.warn("Unable to inject capability at {}.{} (Invalid Annotation)", targetClass, targetName);
-                continue;
-            }
             final String capabilityName = type.getInternalName().replace('/', '.').intern();
 
             if (entry.getObjectName().indexOf('(') <= 0) {
                 try {
                     Field field = Class.forName(targetClass).getDeclaredField(targetName);
                     if ((field.getModifiers() & Modifier.STATIC) != Modifier.STATIC) {
-                        FMLLog.log.warn("Unable to inject capability {} at {}.{} (Non-Static)", capabilityName, targetClass, targetName);
+                        FMLLog.log.warn("Unable to inject block {} at {}.{} (Non-Static)", capabilityName, targetClass, targetName);
                     }
                     blockLoader.getFields().add(field);
                 } catch (Exception e) {
-                    FMLLog.log.warn("Unable to inject capability {} at {}.{}", capabilityName, targetClass, targetName, e);
+                    FMLLog.log.warn("Unable to inject block {} at {}.{}", capabilityName, targetClass, targetName, e);
                 }
             }
         }
@@ -77,22 +72,17 @@ public class CommonProxy
 
             Type type = Type.getObjectType(entry.getAnnotationInfo().get("value").toString());
 
-            if (type == null)
-            {
-                FMLLog.log.warn("Unable to inject capability at {}.{} (Invalid Annotation)", targetClass, targetName);
-                continue;
-            }
             final String capabilityName = type.getInternalName().replace('/', '.').intern();
 
             if (entry.getObjectName().indexOf('(') <= 0) {
                 try {
                     Field field = Class.forName(targetClass).getDeclaredField(targetName);
                     if ((field.getModifiers() & Modifier.STATIC) != Modifier.STATIC) {
-                        FMLLog.log.warn("Unable to inject capability {} at {}.{} (Non-Static)", capabilityName, targetClass, targetName);
+                        FMLLog.log.warn("Unable to inject item {} at {}.{} (Non-Static)", capabilityName, targetClass, targetName);
                     }
                     itemLoader.getFields().add(field);
                 } catch (Exception e) {
-                    FMLLog.log.warn("Unable to inject capability {} at {}.{}", capabilityName, targetClass, targetName, e);
+                    FMLLog.log.warn("Unable to inject item {} at {}.{}", capabilityName, targetClass, targetName, e);
                 }
             }
         }
