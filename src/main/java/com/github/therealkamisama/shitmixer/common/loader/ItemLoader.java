@@ -31,11 +31,15 @@ import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ItemLoader {
-    public ItemLoader() {
-        for (Field field : SMItems.class.getFields()) {
+    private List<Field> fields = new ArrayList<>();
+
+    public void register() {
+        for (Field field : fields) {
             field.setAccessible(true);
             try {
                 RegItem annoItem = field.getAnnotation(RegItem.class);
@@ -87,5 +91,9 @@ public class ItemLoader {
 
     private void registerRender(Item item, int meta) {
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+    }
+
+    public List<Field> getFields() {
+        return fields;
     }
 }

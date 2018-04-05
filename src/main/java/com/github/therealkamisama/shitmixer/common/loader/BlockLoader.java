@@ -21,32 +21,29 @@
 package com.github.therealkamisama.shitmixer.common.loader;
 
 import com.github.therealkamisama.shitmixer.Shitmixer;
-import com.github.therealkamisama.shitmixer.common.SMBlocks;
 import com.github.therealkamisama.shitmixer.common.annotation.RegBlock;
 import com.github.therealkamisama.shitmixer.common.register.RegisterManager;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.oredict.OreDictionary;
-import net.minecraftforge.registries.IForgeRegistryEntry;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class BlockLoader {
-    public BlockLoader() {
-        for (Field field : SMBlocks.class.getFields()) {
+    private List<Field> fields = new ArrayList<>();
+
+    public void register() {
+        for (Field field : fields) {
             try {
                 field.setAccessible(true);
-                RegBlock anno = field.getAnnotation(RegBlock.class);
-                if (anno == null) {
-                    if (IForgeRegistryEntry.class.isAssignableFrom(field.getDeclaringClass())) {
-                        RegisterManager.getInstance().putRegister((IForgeRegistryEntry) field.get(null));
-                    }
-                    continue;
-                }
 
                 Block block = (Block) field.get(null);
+                RegBlock anno = field.getAnnotation(RegBlock.class);
+
                 RegisterManager.getInstance().putRegister(block.setRegistryName(Shitmixer.MODID, anno.value()).setUnlocalizedName(anno.value()));
 
                 // Register item block.
@@ -59,5 +56,9 @@ public class BlockLoader {
             } catch (Throwable e) {
             }
         }
+    }
+
+    public List<Field> getFields() {
+        return fields;
     }
 }

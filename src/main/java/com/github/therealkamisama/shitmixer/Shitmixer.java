@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLConstructionEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -25,6 +26,12 @@ public class Shitmixer
 
     @SidedProxy(clientSide = "com.github.therealkamisama.shitmixer.client.ClientProxy", serverSide = "com.github.therealkamisama.shitmixer.common.CommonProxy")
     public static CommonProxy proxy;
+
+    @EventHandler
+    public void construct(FMLConstructionEvent event)
+    {
+        proxy.construct(event);
+    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
